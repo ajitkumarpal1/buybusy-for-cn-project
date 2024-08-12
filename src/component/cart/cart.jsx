@@ -27,7 +27,7 @@ export default function Cart() {
         <div className="w-full max-w-4xl">
           {cartItems.map((item) => (
             <div key={item.id} className="flex flex-col sm:flex-row items-center shadow-md rounded-lg mb-4 p-6  bg-blue-600">
-              <img src={item.image} alt={item.title} className="w-32 h-32 object-contain mb-4 sm:mb-0 sm:mr-4" />
+              <img src={item.image || item.images[0]} alt={item.title} className="w-32 h-32 object-contain mb-4 sm:mb-0 sm:mr-4" />
               <div className="flex flex-col flex-grow">
                 <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
                 <p className="text-white mb-4">{item.description}</p>

@@ -11,7 +11,8 @@ export const setHomeItemThunk = createAsyncThunk(
   "home/setItem",
   async (res, thunkAPI) => {
     try {
-      const response = await axios.get("https://fakestoreapi.com/products");
+      const response = await axios.get("https://dummyjson.com/products");
+      console.log("Ajit",response)
       return response.data; // Return only the data
     } catch (error) {
       // Handle rejection and return a rejected value with an error message

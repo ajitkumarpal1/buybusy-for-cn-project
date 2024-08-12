@@ -55,7 +55,7 @@ export default function Navbar() {
       <nav className="bg-blue-600 p-4 shadow-lg shadow-blue-950 sm:rounded-none md:m-6 md:rounded-3xl lg:m-10">
         <div className="container mx-auto flex items-center justify-between flex-wrap">
           <div className="text-lg font-semibold text-white mb-4 md:mb-0">
-            MyWebsite
+          🙄Work in progress...
           </div>
 
           <input

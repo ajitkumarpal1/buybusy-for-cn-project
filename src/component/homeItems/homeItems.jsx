@@ -10,10 +10,11 @@ import { toast } from "react-toastify";
 
 export default function HomeItems() {
   const dispatch = useDispatch();
-  const items = useSelector((state) => state.homeItam);
+  const items = useSelector((state) => state.homeItam).data;
   const userData = useSelector((state) => state.userData);
 
   useEffect(() => {
+    console.log("items",items)
     dispatch(setHomeItemThunk());
     // const fetchData = async () => {
     //   try {
@@ -61,10 +62,10 @@ export default function HomeItems() {
           {items.error && (
             <div className="text-red-500 text-center mb-8">Error: {items.error}</div>
           )}
-          {!items.loading && !items.error && items.data && items.data.map((item) => (
+          {!items.loading && !items.error && items.products && items.products.map((item) => (
             <div key={item.id} className="flex flex-col overflow-hidden rounded-lg bg-blue-600 text-white pt-2 shadow-lg hover:shadow-xl transition-shadow duration-200">
               <Link to={`/product/${item.id}`} className="flex flex-col flex-grow">
-                <img src={item.image} alt={item.title} className="w-full h-48 object-contain" />
+                <img src={item.images[0]} alt={item.title} className="w-full h-48 object-contain" />
                 <div className="p-6 flex flex-col flex-grow">
                   <h2 className="text-xl font-semibold mb-2 overflow-hidden" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>{item.title}</h2>
                   <p className="mb-4 overflow-hidden flex-grow" style={{ display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical' }}>{item.description}</p>
